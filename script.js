@@ -115,31 +115,31 @@ function create() {
 
     player = this.physics.add.sprite(32 * 3.5, 32 * 15, 'dude');
 
-    // player.setBounce(0.1);
-    // player.setCollideWorldBounds(true);
-    // player.setGravityY(500);
+    player.setBounce(0.1);
+    player.setCollideWorldBounds(true);
+    player.setGravityY(500);
 
-    // this.anims.create({
-    //     key: 'left',
-    //     frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 1 }),
-    //     frameRate: 10,
-    //     repeat: -1
-    // });
+    this.anims.create({
+        key: 'left',
+        frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 1 }),
+        frameRate: 10,
+        repeat: -1
+    });
 
-    // this.anims.create({
-    //     key: 'turn',
-    //     frames: [{ key: 'dude', frame: 2 }],
-    //     frameRate: 20
-    // });
+    this.anims.create({
+        key: 'turn',
+        frames: [{ key: 'dude', frame: 2 }],
+        frameRate: 20
+    });
 
-    // this.anims.create({
-    //     key: 'right',
-    //     frames: this.anims.generateFrameNumbers('dude', { start: 3, end: 4 }),
-    //     frameRate: 10,
-    //     repeat: -1
-    // });
+    this.anims.create({
+        key: 'right',
+        frames: this.anims.generateFrameNumbers('dude', { start: 3, end: 4 }),
+        frameRate: 10,
+        repeat: -1
+    });
 
-    // cursors = this.input.keyboard.createCursorKeys();
+    cursors = this.input.keyboard.createCursorKeys();
 
     // stars = this.physics.add.group({
     //     key: 'star',
@@ -153,9 +153,11 @@ function create() {
 
     // });
 
-    // scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '16px', fill: '#000' });
 
     // bombs = this.physics.add.group();
+
+    this.physics.add.collider(player, walls);
 
     // this.physics.add.collider(player, platforms);
     // this.physics.add.collider(player, movingPlatform);
